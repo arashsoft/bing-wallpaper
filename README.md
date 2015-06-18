@@ -1,4 +1,4 @@
-Bing Wallpaper for Mac and Ubuntu
+Bing Wallpaper for Ubuntu
 =================================
 
 Information
@@ -7,10 +7,8 @@ A script which downloads the latest picture of the day from Bing.com and saves
 it to a directory.
 
 The script was tested on:
-    Mac OS X 10.8.2 and 10.8.3
-    Ubuntu 12.04 - 13.10
+    Ubuntu 12.04 - 15.04
 
-[Blog entry](http://blog.ideasftw.com/2012/12/bing-desktop-for-mac.html)
 
 How to use?
 -----------
@@ -20,26 +18,6 @@ download the bing image.
 wallpaper directory. If left unchanged the default value is
 **~/Pictures/bing-wallpapers/**.
 
-Configuration on Mac
---------------------
-* Open Mac's `System Preferences` -> `Desktop & Screensaver`, add the wallpaper
-directory, and configure to taste.
-
-* To have the script run everyday automatically you will need to setup launchd
-(Mac only, for Ubuntu see below). I have provided a sample plist file, found in
-the Tools directory, which can be copied to **$HOME/Library/LaunchAgents** and
-loaded with the command
-  `launchctl load $HOME/Library/LaunchAgents/com.ideasftw.bing-wallpaper.plist`
-Modify the plist as needed to point to **bing-wallpaper.sh**. For more
-information on configuring launchd [see here](
-http://blog.ideasftw.com/2013/02/run-script-from-launchd-instead-of-cron.html).
-
-* Another option on Mac (and arguably a little simpler) is to set the Calendar
-app to run the **Tools/Bing Wallpaper.app** [at a recurring daily time](
-http://blog.ideasftw.com/2013/03/use-mac-calendar-and-automator-to-run.html).
-Modify the app (from within Automator) as it needs to point to
-**bing-wallpaper.sh** and the correct **PICTURE_DIR**.
-
 Configuration on Ubuntu
 -----------------------
 **TL;DR:**
@@ -47,11 +25,11 @@ Configuration on Ubuntu
 * To install Gnome background slideshow, in the terminal run:
 
 ```
-$ git clone git@github.com:thejandroman/bing-wallpaper.git
+$ git clone https://github.com/arashsoft/bing-wallpaper.git
 $ bing-wallpaper/Tools/gnome-bing-slideshow/deploy-gnome-settings.sh
 ```
 
-* Register `bing-wallpaper/bing-random-pic.sh` to run regularly.
+* Register `bing-wallpaper/Tools/startup.sh` to run regularly.
 
 * Change the background properties to use the new slideshow.
 
